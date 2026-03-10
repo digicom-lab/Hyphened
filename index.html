@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,31 +12,22 @@
 
 :root{
 --bg:#f4f4f2;
---bg-soft:#ecece8;
 --card:#ffffff;
 --text:#0b0b0b;
---muted:#5c5c5c;
---line:rgba(0,0,0,.08);
---shadow:0 20px 60px rgba(0,0,0,.08);
+--muted:#666;
+--line:rgba(0,0,0,.1);
 }
 
 body.dark{
 --bg:#050505;
---bg-soft:#0c0c0c;
---card:#111111;
+--card:#111;
 --text:#f5f5f5;
---muted:#cfcfcf;
---line:rgba(255,255,255,.12);
---shadow:0 20px 60px rgba(0,0,0,.6);
+--muted:#bbb;
+--line:rgba(255,255,255,.1);
 }
 
 body{
 background:var(--bg);
-color:var(--text);
-transition:.3s;
-}
-
-h1,h2,h3,strong{
 color:var(--text);
 }
 
@@ -45,27 +35,22 @@ color:var(--text);
 padding:4rem 0;
 }
 
-.hero-title{
-font-size:clamp(2.8rem,7vw,5rem);
+.hero h1{
+font-size:clamp(3rem,7vw,5rem);
 letter-spacing:-.04em;
-}
-
-.section{
-padding:3rem 0;
 }
 
 .card{
 background:var(--card);
 border:1px solid var(--line);
-border-radius:26px;
+border-radius:20px;
 padding:1.5rem;
-box-shadow:var(--shadow);
 }
 
 .grid-2{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:1.2rem;
+gap:1rem;
 }
 
 .grid-3{
@@ -75,38 +60,14 @@ gap:1rem;
 margin-top:1rem;
 }
 
-.small-card{
-padding:1rem;
+.small{
 border:1px solid var(--line);
-border-radius:16px;
-background:rgba(255,255,255,.04);
-}
-
-body:not(.dark) .small-card{
-background:#fafafa;
-}
-
-.quote{
-font-size:1.1rem;
-font-weight:500;
-}
-
-.reveal{
-opacity:0;
-transform:translateY(30px);
-transition:all .7s ease;
-}
-
-.reveal.visible{
-opacity:1;
-transform:translateY(0);
+border-radius:14px;
+padding:1rem;
 }
 
 @media(max-width:900px){
-.grid-2,
-.grid-3{
-grid-template-columns:1fr;
-}
+.grid-2,.grid-3{grid-template-columns:1fr;}
 }
 
 </style>
@@ -123,122 +84,67 @@ grid-template-columns:1fr;
 <ul>
 <li><a href="#platform">Platform</a></li>
 <li><a href="#workflow">Workflow</a></li>
-<li><a href="#" role="button" id="toggle">Dark mode</a></li>
+<li><a href="#" role="button" id="toggle">Dark</a></li>
 </ul>
 </nav>
 
 <main class="container">
 
-<div class="grid">
-
 <section class="hero">
 
-<hgroup>
-<h2 class="hero-title">Where conversations become actions</h2>
-<h3>Turn communication into structured execution</h3>
-</hgroup>
+<h1>Where conversations become actions</h1>
 
 <p>
-Hyphened captures signal inside conversations and transforms it into
-decisions, ownership, and next steps.
-Instead of losing clarity between talking and doing, teams gain a shared execution layer.
-</p>
-
-<figure>
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80">
-<figcaption>
-<a href="https://unsplash.com" target="_blank">Image source</a>
-</figcaption>
-</figure>
-
-<h3>Designed for execution</h3>
-
-<p>
-Every conversation can become visible action across your organization.
-</p>
-
-<h3>Human-first workflows</h3>
-
-<p>
-Hyphened keeps communication natural while structuring outcomes.
+Hyphened captures signal inside conversations and turns it into decisions,
+ownership, and next steps.
 </p>
 
 </section>
 
-</div>
-
 </main>
 
-<section class="section" id="platform">
+<section id="platform">
 
 <div class="container">
 
 <h2>Decision intelligence</h2>
 
-<p>
-Track what was agreed, by whom, and what should happen next.
-</p>
-
 <div class="grid-2">
 
-<div class="card reveal">
+<div class="card">
 
 <h3>Understand decisions instantly</h3>
 
-<p>
-Instead of digging through message history,
-Hyphened highlights the moments that matter.
-</p>
-
 <div class="grid-3">
 
-<div class="small-card">
+<div class="small">
 <strong>Context attached</strong>
 <p>Every decision links back to the conversation.</p>
 </div>
 
-<div class="small-card">
+<div class="small">
 <strong>Ownership surfaced</strong>
-<p>Responsibilities become visible immediately.</p>
+<p>Responsibilities become visible.</p>
 </div>
 
-<div class="small-card">
+<div class="small">
 <strong>Next steps clear</strong>
-<p>Follow-ups turn into actionable paths.</p>
+<p>Follow-ups become actions.</p>
 </div>
 
 </div>
 
 </div>
 
-<div class="card reveal">
+<div class="card">
 
-<p class="quote">
+<p>
 
 “The biggest productivity gap in modern teams is not effort.
 It is translation between conversation and execution.”
 
 </p>
 
-<div class="grid-3">
-
-<div class="small-card">
-<strong>Less drift</strong>
-<p>Teams stop losing momentum after meetings.</p>
-</div>
-
-<div class="small-card">
-<strong>More clarity</strong>
-<p>Everyone understands what happens next.</p>
-</div>
-
-<div class="small-card">
-<strong>Faster execution</strong>
-<p>Ideas convert into real work quickly.</p>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -247,7 +153,7 @@ It is translation between conversation and execution.”
 
 </section>
 
-<section class="section" id="workflow">
+<section id="workflow">
 
 <div class="container">
 
@@ -255,51 +161,11 @@ It is translation between conversation and execution.”
 
 <div class="grid-3">
 
-<div class="card reveal">
-<strong>Conversation</strong>
-<p>Meetings, chats, notes.</p>
-</div>
-
-<div class="card reveal">
-<strong>Decision</strong>
-<p>Key outcomes identified.</p>
-</div>
-
-<div class="card reveal">
-<strong>Execution</strong>
-<p>Owners and actions distributed.</p>
-</div>
+<div class="card">Conversation</div>
+<div class="card">Decision</div>
+<div class="card">Execution</div>
 
 </div>
-
-</div>
-
-</section>
-
-<section aria-label="Subscribe example">
-
-<div class="container">
-
-<article class="card">
-
-<hgroup>
-<h2>Stay close to the launch</h2>
-<h3>Join the waitlist</h3>
-</hgroup>
-
-<form class="grid">
-
-<input type="text" placeholder="First name" required>
-
-<input type="email" placeholder="Email" required>
-
-<button type="submit" onclick="event.preventDefault()">
-Request access
-</button>
-
-</form>
-
-</article>
 
 </div>
 
@@ -308,33 +174,16 @@ Request access
 <footer class="container">
 
 <small>
-
-<a href="#">Privacy</a> •
-
-<a href="#">Contact</a>
-
+<a href="#">Privacy</a> • <a href="#">Contact</a>
 </small>
 
 </footer>
 
 <script>
 
-const btn=document.getElementById('toggle');
-
-btn.onclick=()=>{
-document.body.classList.toggle('dark')
+document.getElementById("toggle").onclick=()=>{
+document.body.classList.toggle("dark")
 }
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){
-e.target.classList.add('visible')
-}
-})
-},{threshold:.15});
-
-document.querySelectorAll('.reveal')
-.forEach(el=>observer.observe(el));
 
 </script>
 
